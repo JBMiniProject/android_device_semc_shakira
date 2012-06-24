@@ -51,8 +51,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/lights.default.so:system/lib/hw/lights.default.so \
     $(LOCAL_PATH)/prebuilt/lights.delta.so:system/lib/hw/lights.delta.so \
-    $(LOCAL_PATH)/prebuilt/sensors.delta.so:system/lib/hw/sensors.delta.so \
-    $(LOCAL_PATH)/prebuilt/sensors.goldfish.so:system/lib/hw/sensors.goldfish.so \
     $(LOCAL_PATH)/prebuilt/camera.msm7x27.so:system/lib/hw/camera.msm7x27.so \
     $(LOCAL_PATH)/prebuilt/libcamera.so:system/lib/libcamera.so \
     $(LOCAL_PATH)/prebuilt/libcamera_client.so:system/lib/libcamera_client.so \
@@ -105,6 +103,7 @@ PRODUCT_PACKAGES += \
     audio_policy.delta \
     gralloc.msm7x27 \
     hwcomposer.default \
+    hwcomposer.msm7x27 \
     gps.delta \
     libOmxCore \
     libmm-omxcore \

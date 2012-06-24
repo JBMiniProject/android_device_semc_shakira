@@ -27,6 +27,7 @@
 # Camera
 USE_CAMERA_STUB := true
 BOARD_USES_ECLAIR_LIBCAMERA := true
+BOARD_USE_FROYO_LIBCAMERA := true
 BOARD_CAMERA_LIBRARIES := camera.msm7x27.so libcameraservice libcamera libcamera_client.so liboemcamera.so
 
 # inherit from the proprietary version
@@ -96,7 +97,7 @@ USE_OPENGL_RENDERER := true
 TARGET_USES_GENLOCK := true
 
 # Fix Refrashrate
-COMMON_GLOBAL_CFLAGS += -DREFRESH_RATE=49 -DQCOM_HARDWARE
+COMMON_GLOBAL_CFLAGS += -DREFRESH_RATE=56 -DQCOM_HARDWARE
 
 # GPS
 BOARD_USES_QCOM_HARDWARE := true
