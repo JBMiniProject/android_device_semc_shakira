@@ -99,8 +99,8 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
-    audio.primary.delta \
-    audio_policy.delta \
+    audio.primary.msm7x27 \
+    audio_policy.msm7x27 \
     gralloc.msm7x27 \
     hwcomposer.default \
     hwcomposer.msm7x27 \
