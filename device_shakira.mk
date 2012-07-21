@@ -105,13 +105,15 @@ PRODUCT_PACKAGES += \
     audio.a2dp.default \
     audio.primary.msm7x27 \
     audio_policy.msm7x27 \
+    copybit.msm7x27 \
     gralloc.msm7x27 \
     hwcomposer.default \
     hwcomposer.msm7x27 \
     gps.delta \
     libOmxCore \
     libmm-omxcore \
-    libopencorehw
+    libopencorehw \
+    libQcomUI
 
 PRODUCT_LOCALES += mdpi
 
