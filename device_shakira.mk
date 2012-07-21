@@ -32,16 +32,16 @@ $(call inherit-product-if-exists, vendor/semc/shakira/shakira-vendor.mk)
 
 # Support files
 PRODUCT_COPY_FILES += \
-    frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
-    frameworks/base/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
-    frameworks/base/data/etc/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml \
-    frameworks/base/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
-    frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
-    frameworks/base/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
-    frameworks/base/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
-    frameworks/base/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml \
-    frameworks/base/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
-    frameworks/base/data/etc/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml
+    frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
+    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
+    frameworks/native/data/etc/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml \
+    frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
+    frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
+    frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
+    frameworks/native/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
+    frameworks/native/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml \
+    frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
+    frameworks/native/data/etc/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml
 
 # Vold
 PRODUCT_COPY_FILES += \
@@ -56,7 +56,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/lights.default.so:system/lib/hw/lights.default.so \
     $(LOCAL_PATH)/prebuilt/lights.delta.so:system/lib/hw/lights.delta.so \
     $(LOCAL_PATH)/prebuilt/camera.msm7x27.so:system/lib/hw/camera.msm7x27.so \
-    $(LOCAL_PATH)/prebuilt/gralloc.msm7x27.so:system/lib/hw/gralloc.msm7x27.so \
     $(LOCAL_PATH)/prebuilt/libcamera.so:system/lib/libcamera.so \
     $(LOCAL_PATH)/prebuilt/libcamera_client.so:system/lib/libcamera_client.so \
     $(LOCAL_PATH)/prebuilt/libcameraservice.so:system/lib/libcameraservice.so \
@@ -107,6 +106,7 @@ PRODUCT_PACKAGES += \
     audio.primary.msm7x27 \
     audio_policy.msm7x27 \
     copybit.msm7x27 \
+    gralloc.msm7x27 \
     hwcomposer.msm7x27 \
     gps.delta \
     libOmxCore \
