@@ -20,7 +20,6 @@ wifi.supplicant_scan_interval=45
 wifi.hotspot.ti=1
 wifi.ap.interface=tiap0
 
-
 # Media
 ro.media.dec.jpeg.memcap=10000000
 ro.media.enc.file.format=3gp,mp4
@@ -69,7 +68,6 @@ dalvik.vm.heapsize=48m
 dalvik.vm.execution-mode=int:jit
 dalvik.vm.dexopt-data-only=1
 dalvik.vm.stack-trace-file=/data/anr/traces.txt
-dalvik.vm.lockprof.threshold=500
 
 # GPS
 ro.ril.def.agps.mode=2

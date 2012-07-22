@@ -18,4 +18,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/device_shakira.mk
+    $(LOCAL_DIR)/shakira.mk
