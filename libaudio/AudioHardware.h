@@ -1,6 +1,5 @@
 /*
 ** Copyright 2008, The Android Open-Source Project
-** Copyright (c) 2011, Code Aurora Forum. All rights reserved.
 **
 ** Licensed under the Apache License, Version 2.0 (the "License");
 ** you may not use this file except in compliance with the License.
@@ -27,12 +26,13 @@
 #include <hardware_legacy/AudioHardwareBase.h>
 
 extern "C" {
-#include <msm_audio.h>
+#include "msm_audio.h"
+#include "msm_audio_voicememo.h"
 }
 
+using namespace android;
+
 namespace android_audio_legacy {
-using android::SortedVector;
-using android::Mutex;
 
 // ----------------------------------------------------------------------------
 // Kernel driver interface
@@ -54,8 +54,14 @@ using android::Mutex;
 #define ADRC_DISABLE 0x0000
 #define EQ_ENABLE    0x0002
 #define EQ_DISABLE   0x0000
-#define RX_IIR_ENABLE   0x0004
-#define RX_IIR_DISABLE  0x0000
+#define RX_IIR_ENABLE  0x0004
+#define RX_IIR_DISABLE 0x0000
+#define MBADRC_ENABLE  0x0010
+#define MBADRC_DISABLE 0x0000
+
+#define AGC_ENABLE     0x0001
+#define NS_ENABLE      0x0002
+#define TX_IIR_ENABLE  0x0004
 
 struct eq_filter_type {
     int16_t gain;
@@ -74,18 +80,67 @@ struct rx_iir_filter {
     uint16_t iir_params[48];
 };
 
-struct msm_audio_config {
-    uint32_t buffer_size;
-    uint32_t buffer_count;
-    uint32_t channel_count;
-    uint32_t sample_rate;
-    uint32_t codec_type;
-    uint32_t unused[3];
+struct adrc_filter {
+    uint16_t adrc_params[8];
 };
 
 struct msm_audio_stats {
     uint32_t out_bytes;
     uint32_t unused[3];
+};
+
+struct tx_iir {
+        uint16_t  cmd_id;
+        uint16_t  active_flag;
+        uint16_t  num_bands;
+        uint16_t iir_params[48];
+};
+
+struct ns {
+        uint16_t  cmd_id;
+        uint16_t  ec_mode_new;
+        uint16_t  dens_gamma_n;
+        uint16_t  dens_nfe_block_size;
+        uint16_t  dens_limit_ns;
+        uint16_t  dens_limit_ns_d;
+        uint16_t  wb_gamma_e;
+        uint16_t  wb_gamma_n;
+};
+
+struct tx_agc {
+        uint16_t  cmd_id;
+        uint16_t  tx_agc_param_mask;
+        uint16_t  tx_agc_enable_flag;
+        uint16_t  static_gain;
+        int16_t   adaptive_gain_flag;
+        uint16_t  agc_params[19];
+};
+
+struct adrc_config {
+    uint16_t adrc_band_params[10];
+};
+
+struct adrc_ext_buf {
+    int16_t buff[196];
+};
+
+struct mbadrc_filter {
+    uint16_t num_bands;
+    uint16_t down_samp_level;
+    uint16_t adrc_delay;
+    uint16_t ext_buf_size;
+    uint16_t ext_partition;
+    uint16_t ext_buf_msw;
+    uint16_t ext_buf_lsw;
+    struct adrc_config adrc_band[5];
+    struct adrc_ext_buf  ext_buf;
+};
+
+enum tty_modes {
+    TTY_OFF = 0,
+    TTY_VCO = 1,
+    TTY_HCO = 2,
+    TTY_FULL = 3
 };
 
 #define CODEC_TYPE_PCM 0
@@ -98,11 +153,8 @@ struct msm_audio_stats {
 #define AUDIO_HW_IN_BUFFERSIZE 2048                 // Default audio input buffer size
 #define AUDIO_HW_IN_FORMAT (AudioSystem::PCM_16_BIT)  // Default audio input sample format
 // ----------------------------------------------------------------------------
-using android_audio_legacy::AudioHardwareBase;
-using android_audio_legacy::AudioStreamOut;
-using android_audio_legacy::AudioStreamIn;
-using android_audio_legacy::AudioSystem;
-using android_audio_legacy::AudioHardwareInterface;
+
+
 class AudioHardware : public  AudioHardwareBase
 {
     class AudioStreamOutMSM72xx;
@@ -115,7 +167,9 @@ public:
 
     virtual status_t    setVoiceVolume(float volume);
     virtual status_t    setMasterVolume(float volume);
-
+#ifdef HAVE_FM_RADIO
+    virtual status_t    setFmVolume(float volume);
+#endif
     virtual status_t    setMode(int mode);
 
     // mic mute
@@ -160,6 +214,9 @@ private:
     uint32_t    getInputSampleRate(uint32_t sampleRate);
     bool        checkOutputStandby();
     status_t    doRouting(AudioStreamInMSM72xx *input);
+#ifdef HAVE_FM_RADIO
+    status_t    setFmOnOff(int onoff);
+#endif
     AudioStreamInMSM72xx*   getActiveInput_l();
 
     class AudioStreamOutMSM72xx : public AudioStreamOut {
@@ -176,8 +233,7 @@ private:
         virtual size_t      bufferSize() const { return 4800; }
         virtual uint32_t    channels() const { return AudioSystem::CHANNEL_OUT_STEREO; }
         virtual int         format() const { return AudioSystem::PCM_16_BIT; }
-//        virtual uint32_t    latency() const { return (1000*AUDIO_HW_NUM_OUT_BUF*(bufferSize()/frameSize()))/sampleRate()+AUDIO_HW_OUT_LATENCY_MS; }
-        virtual uint32_t    latency() const { return 109; }
+        virtual uint32_t    latency() const { return (1000*AUDIO_HW_NUM_OUT_BUF*(bufferSize()/frameSize()))/sampleRate()+AUDIO_HW_OUT_LATENCY_MS; }
         virtual status_t    setVolume(float left, float right) { return INVALID_OPERATION; }
         virtual ssize_t     write(const void* buffer, size_t bytes);
         virtual status_t    standby();
@@ -187,8 +243,6 @@ private:
         virtual String8     getParameters(const String8& keys);
                 uint32_t    devices() { return mDevices; }
         virtual status_t    getRenderPosition(uint32_t *dspFrames);
-        virtual status_t    addAudioEffect(effect_handle_t effect){return INVALID_OPERATION;}
-        virtual status_t    removeAudioEffect(effect_handle_t effect){return INVALID_OPERATION;}
 
     private:
                 AudioHardware* mHardware;
@@ -228,8 +282,10 @@ private:
         virtual unsigned int  getInputFramesLost() const { return 0; }
                 uint32_t    devices() { return mDevices; }
                 int         state() const { return mState; }
-        virtual status_t    addAudioEffect(effect_handle_t effect){return INVALID_OPERATION;}
-        virtual status_t    removeAudioEffect(effect_handle_t effect){return INVALID_OPERATION;}
+
+        // Stubs (ICS)
+        virtual status_t addAudioEffect(effect_handle_t effect) { return INVALID_OPERATION; }
+        virtual status_t removeAudioEffect(effect_handle_t effect) { return INVALID_OPERATION; }
 
     private:
                 AudioHardware* mHardware;
@@ -243,7 +299,6 @@ private:
                 AudioSystem::audio_in_acoustics mAcoustics;
                 uint32_t    mDevices;
                 bool        mFirstread;
-                static int InstanceCount;
     };
 
             static const uint32_t inputSamplingRates[];
@@ -252,14 +307,23 @@ private:
             bool        mBluetoothNrec;
             uint32_t    mBluetoothId;
             AudioStreamOutMSM72xx*  mOutput;
-            SortedVector <AudioStreamInMSM72xx*>   mInputs;
+            android::SortedVector <AudioStreamInMSM72xx*>   mInputs;
 
             msm_snd_endpoint *mSndEndpoints;
             int mNumSndEndpoints;
             int mCurSndDevice;
+	    int mFmRadioEnabled;
+	    int mFmPrev;
+	    int mFmVolume;
+            int m7xsnddriverfd;
+            int fmfd;
+            bool        mDualMicEnabled;
+            int         mTtyMode;
+
+            bool        mBuiltinMicSelected;
 
      friend class AudioStreamInMSM72xx;
-            Mutex       mLock;
+            android::Mutex       mLock;
 };
 
 // ----------------------------------------------------------------------------
