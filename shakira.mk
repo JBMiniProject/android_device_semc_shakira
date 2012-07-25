@@ -82,6 +82,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/bin/nvimport:system/bin/nvimport \
     $(LOCAL_PATH)/prebuilt/bin/port-bridge:system/bin/port-bridge \
     $(LOCAL_PATH)/prebuilt/bin/qmuxd:system/bin/qmuxd \
+    $(LOCAL_PATH)/prebuilt/bin/rild:system/bin/rild \
     $(LOCAL_PATH)/prebuilt/bin/semc_chargalg:system/bin/semc_chargalg \
     $(LOCAL_PATH)/prebuilt/bin/tiap_cu:system/bin/tiap_cu \
     $(LOCAL_PATH)/prebuilt/bin/tiap_loader:system/bin/tiap_loader \
@@ -134,7 +135,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/lib/egl/libq3dtools_adreno200.so:system/lib/egl/libq3dtools_adreno200.so \
     $(LOCAL_PATH)/prebuilt/lib/hw/hal_seport.default.so:system/lib/hw/hal_seport.default.so \
     $(LOCAL_PATH)/prebuilt/lib/hw/lights.default.so:system/lib/hw/lights.default.so \
-    $(LOCAL_PATH)/prebuilt/lib/hw/lights.shakira.so:system/lib/hw/lights.shakira.so \
+    $(LOCAL_PATH)/prebuilt/lib/hw/lights.delta.so:system/lib/hw/lights.delta.so \
     $(LOCAL_PATH)/prebuilt/lib/hw/sensors.default.so:system/lib/hw/sensors.default.so \
     $(LOCAL_PATH)/prebuilt/lib/libsystemconnector/libuinputdevicejni.so:system/lib/libsystemconnector/libuinputdevicejni.so \
     $(LOCAL_PATH)/prebuilt/lib/libaudioeq.so:system/lib/libaudioeq.so \
@@ -177,6 +178,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/lib/libpbmlib.so:system/lib/libpbmlib.so \
     $(LOCAL_PATH)/prebuilt/lib/libqmi.so:system/lib/libqmi.so \
     $(LOCAL_PATH)/prebuilt/lib/libqueue.so:system/lib/libqueue.so \
+    $(LOCAL_PATH)/prebuilt/lib/libril.so:system/lib/libril.so \
     $(LOCAL_PATH)/prebuilt/lib/libsc-a2xx.so:system/lib/libsc-a2xx.so \
     $(LOCAL_PATH)/prebuilt/lib/libsemc_ril.so:system/lib/libsemc_ril.so \
     $(LOCAL_PATH)/prebuilt/lib/libsystemconnector_hal_jni.so:system/lib/libsystemconnector_hal_jni.so \

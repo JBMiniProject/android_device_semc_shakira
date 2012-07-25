@@ -72,7 +72,7 @@ WIFI_EXT_MODULE_NAME := sdio
 PRODUCT_DEFAULT_WIFI_CHANNELS := 14
 
 # EGL
-BOARD_EGL_CFG := device/semc/shakira/prebuilt/egl.cfg
+BOARD_EGL_CFG := device/semc/shakira/prebuilt/lib/egl/egl.cfg
 
 # libaudio
 BOARD_USES_GENERIC_AUDIO := false
