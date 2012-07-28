@@ -51,8 +51,6 @@ PRODUCT_PACKAGES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    audio.primary.msm7x27 \
-    audio_policy.msm7x27 \
     audio.a2dp.default \
     libaudioutils
 
@@ -110,7 +108,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/etc/firmware/yamato_pfp.fw:system/etc/firmware/yamato_pfp.fw \
     $(LOCAL_PATH)/prebuilt/etc/firmware/yamato_pm4.fw:system/etc/firmware/yamato_pm4.fw \
     $(LOCAL_PATH)/prebuilt/etc/init.d/01mountext:system/etc/init.d/01mountext \
-    $(LOCAL_PATH)/prebuilt/etc/init.d/10app2sd:system/etc/init.d/10app2sd \
+    $(LOCAL_PATH)/prebuilt/etc/init.d/10apps2sd:system/etc/init.d/10apps2sd \
     $(LOCAL_PATH)/prebuilt/etc/init.d/10dnsconf:system/etc/init.d/10dnsconf \
     $(LOCAL_PATH)/prebuilt/etc/init.d/10hostapconf:system/etc/init.d/10hostapconf \
     $(LOCAL_PATH)/prebuilt/etc/semc/chargemon/anim1.rle:system/etc/semc/chargemon/anim1.rle \
@@ -133,6 +131,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/lib/egl/libGLESv1_CM_adreno200.so:system/lib/egl/libGLESv1_CM_adreno200.so \
     $(LOCAL_PATH)/prebuilt/lib/egl/libGLESv2_adreno200.so:system/lib/egl/libGLESv2_adreno200.so \
     $(LOCAL_PATH)/prebuilt/lib/egl/libq3dtools_adreno200.so:system/lib/egl/libq3dtools_adreno200.so \
+    $(LOCAL_PATH)/prebuilt/lib/hw/audio_policy.msm7x27.so:system/lib/hw/audio_policy.msm7x27.so \
+    $(LOCAL_PATH)/prebuilt/lib/hw/audio.primary.msm7x27.so:system/lib/hw/audio.primary.msm7x27.so \
     $(LOCAL_PATH)/prebuilt/lib/hw/hal_seport.default.so:system/lib/hw/hal_seport.default.so \
     $(LOCAL_PATH)/prebuilt/lib/hw/lights.default.so:system/lib/hw/lights.default.so \
     $(LOCAL_PATH)/prebuilt/lib/hw/lights.delta.so:system/lib/hw/lights.delta.so \
