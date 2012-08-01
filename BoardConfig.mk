@@ -76,8 +76,11 @@ BOARD_EGL_CFG := device/semc/shakira/prebuilt/lib/egl/egl.cfg
 
 # Libaudio
 TARGET_PROVIDES_LIBAUDIO := true
+BOARD_USES_GENERIC_AUDIO := false
+BOARD_USES_AUDIO_LEGACY := false
 
 # Libaudio ICS hack
+BOARD_USES_ICS_LIBAUDIO := true
 COMMON_GLOBAL_CFLAGS += -DICS_AUDIO_BLOB
 
 # Bluetooth
