@@ -72,6 +72,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/app/SystemConnector.apk:system/app/SystemConnector.apk \
     $(LOCAL_PATH)/prebuilt/bin/akmd2:system/bin/akmd2 \
     $(LOCAL_PATH)/prebuilt/bin/chargemon:system/bin/chargemon \
+    $(LOCAL_PATH)/prebuilt/bin/dhcpcd:system/bin/dhcpcd \
     $(LOCAL_PATH)/prebuilt/bin/hciattach:system/bin/hciattach \
     $(LOCAL_PATH)/prebuilt/bin/nvimport:system/bin/nvimport \
     $(LOCAL_PATH)/prebuilt/bin/port-bridge:system/bin/port-bridge \
