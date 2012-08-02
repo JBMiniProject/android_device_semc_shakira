@@ -72,3 +72,8 @@ dalvik.vm.stack-trace-file=/data/anr/traces.txt
 # GPS
 ro.ril.def.agps.mode=2
 ro.ril.def.agps.feature=1
+
+
+# Some stuff
+pm.sleep_mode=2
+debug.enabletr=false
