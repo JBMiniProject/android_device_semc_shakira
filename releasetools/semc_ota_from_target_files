@@ -377,62 +377,56 @@ def WriteFullOTAPackage(input_zip, output_zip):
 #    ts = GetBuildProp("ro.build.date.utc", input_zip)
 #    script.AssertOlderBuild(ts)
 
-  AppendAssertions(script, input_zip)
-  device_specific.FullOTA_Assertions()
-  if OPTIONS.backuptool:
-    script.RunBackup("backup")
+  script.Print("                                ")
+  script.Print("                                ")
+  script.Print("    Jelly Bean Mini Project     ")
+  script.Print("            XPERIA X8           ")
+  script.Print("                                ")
+  script.Print("      Created by: Daveee10      ")
+  script.Print("                                ")
+  script.Print("         Team members:          ")
+  script.Print(" Stelios97, Daveee10, Xmaster8  ")
+  script.Print("                                ")
+  script.Print("                                ")
 
   script.ShowProgress(0.5, 0)
 
-  if OPTIONS.wipe_user_data:
-    script.FormatPartition("/data")
-
-  has_boot_partition = 'fstab' in OPTIONS.info_dict and '/boot' in OPTIONS.info_dict['fstab']
+  script.Print("-> Wipeing <-");
+  
+  script.RunBackup("backup")
 
   script.FormatPartition("/system")
   script.Mount("/system")
-  script.UnpackPackageDir("recovery", "/system")
+  script.FormatPartition("/cache")
+  script.Mount("/cache")
+  script.Mount("/data")
+
+  script.DeleteRecursive("/data/dalvik-cache")
+  script.RunPrg("/sbin/busybox", "mount", "-t", "auto", "/dev/block/mmcblk0p2", "/sd-ext")
+  script.DeleteRecursive("/sd-ext/dalvik-cache")
+
+  script.Print("-> Installing <-")
+
+  script.UnpackPackageDir("data", "/data")
   script.UnpackPackageDir("system", "/system")
 
   symlinks = CopySystemFiles(input_zip, output_zip)
   script.MakeSymlinks(symlinks)
 
-  boot_img = common.File("boot.img", common.BuildBootableImage(
-      os.path.join(OPTIONS.input_tmp, "BOOT")))
-  recovery_img = common.File("recovery.img", common.BuildBootableImage(
-      os.path.join(OPTIONS.input_tmp, "RECOVERY")))
-
-  if has_boot_partition:
-    MakeRecoveryPatch(output_zip, recovery_img, boot_img)
+  script.Print("-> Set permissions <-")
 
   Item.GetMetadata(input_zip)
   Item.Get("system").SetPermissions(script)
 
-  if has_boot_partition:
-    common.CheckSize(boot_img.data, "boot.img", OPTIONS.info_dict)
-    common.ZipWriteStr(output_zip, "boot.img", boot_img.data)
+  script.RunBackup("restore")
 
-  script.ShowProgress(0.2, 0)
-
-  if OPTIONS.backuptool:
-    script.ShowProgress(0.2, 10)
-    script.RunBackup("restore")
-
-  script.RunModelidCfg()
-
-  script.RunVerifyCachePartitionSize()
-
-  if has_boot_partition:
-    script.ShowProgress(0.2, 10)
-    script.WriteRawImage("/boot", "boot.img")
-
-  script.ShowProgress(0.1, 0)
   device_specific.FullOTA_InstallEnd()
 
   if OPTIONS.extra_script is not None:
     script.AppendExtra(OPTIONS.extra_script)
 
   script.UnmountAll()
+  script.Print("-> All done! <-")
   script.AddToZip(input_zip, output_zip)
   WriteMetadata(metadata, output_zip)
 

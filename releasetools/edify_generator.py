@@ -104,6 +104,8 @@ class EdifyGenerator(object):
   def RunBackup(self, command):
     self.script.append('package_extract_file("system/bin/backuptool.sh", "/tmp/backuptool.sh");')
     self.script.append('set_perm(0, 0, 0777, "/tmp/backuptool.sh");')
+    self.script.append('package_extract_file("system/bin/backuptool.functions", "/tmp/backuptool.functions");')
+    self.script.append('set_perm(0, 0, 0777, "/tmp/backuptool.functions");')
     self.script.append(('run_program("/tmp/backuptool.sh", "%s");' % command))
 
   def RunModelidCfg(self):
@@ -189,6 +191,12 @@ class EdifyGenerator(object):
     if not file_list: return
     cmd = "delete(" + ",\0".join(['"%s"' % (i,) for i in file_list]) + ");"
     self.script.append(self._WordWrap(cmd))
+
+  def DeleteRecursive(self, folder):
+    self.script.append("delete_recursive(\"%s\");" % (folder,))
+
+  def RunPrg(self, command, p1, p2, p3, p4, p5):
+    self.script.append("run_program(\"%s\", \"%s\", \"%s\", \"%s\", \"%s\", \"%s\");" % (command, p1, p2, p3, p4, p5))
 
   def ApplyPatch(self, srcfile, tgtfile, tgtsize, tgtsha1, *patchpairs):
     """Apply binary patches (in *patchpairs) to the given srcfile to
