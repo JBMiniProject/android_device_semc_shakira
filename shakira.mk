@@ -69,9 +69,6 @@ PRODUCT_COPY_FILES += \
 
 # Prebuilt files
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/app/Home.apk:system/app/Home.apk \
-    $(LOCAL_PATH)/prebuilt/app/HomeAdd.apk:system/app/HomeAdd.apk \
-    $(LOCAL_PATH)/prebuilt/app/HomePreferences.apk:system/app/HomePreferences.apk \
     $(LOCAL_PATH)/prebuilt/app/SystemConnector.apk:system/app/SystemConnector.apk \
     $(LOCAL_PATH)/prebuilt/bin/akmd2:system/bin/akmd2 \
     $(LOCAL_PATH)/prebuilt/bin/chargemon:system/bin/chargemon \
@@ -119,14 +116,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/etc/semc/chargemon/anim6.rle:system/etc/semc/chargemon/anim6.rle \
     $(LOCAL_PATH)/prebuilt/etc/semc/chargemon/anim7.rle:system/etc/semc/chargemon/anim7.rle \
     $(LOCAL_PATH)/prebuilt/etc/semc/chargemon/anim8.rle:system/etc/semc/chargemon/anim8.rle \
-    $(LOCAL_PATH)/prebuilt/etc/permissions/com.sonyericsson.facebook.proxy_1.xml:system/etc/permissions/com.sonyericsson.facebook.proxy_1.xml \
     $(LOCAL_PATH)/prebuilt/etc/wifi/dnsmasq.conf:system/etc/wifi/dnsmasq.conf \
     $(LOCAL_PATH)/prebuilt/etc/wifi/tiwlan.ini:system/etc/wifi/tiwlan.ini \
     $(LOCAL_PATH)/prebuilt/etc/wifi/tiwlan_firmware.bin:system/etc/wifi/tiwlan_firmware.bin \
     $(LOCAL_PATH)/prebuilt/etc/wifi/softap/hostapd.conf:system/etc/wifi/softap/hostapd.conf \
     $(LOCAL_PATH)/prebuilt/etc/wifi/softap/tiwlan_ap.ini:system/etc/wifi/softap/tiwlan_ap.ini \
     $(LOCAL_PATH)/prebuilt/etc/wifi/softap/tiwlan_firmware_ap.bin:system/etc/wifi/softap/tiwlan_firmware_ap.bin \
-    $(LOCAL_PATH)/prebuilt/framework/com.sonyericsson.facebook.proxy_1_impl.jar:system/framework/com.sonyericsson.facebook.proxy_1_impl.jar \
     $(LOCAL_PATH)/prebuilt/lib/egl/eglsubAndroid.so:system/lib/egl/eglsubAndroid.so \
     $(LOCAL_PATH)/prebuilt/lib/egl/libEGL_adreno200.so:system/lib/egl/libEGL_adreno200.so \
     $(LOCAL_PATH)/prebuilt/lib/egl/libGLES_android.so:system/lib/egl/libGLES_android.so \
