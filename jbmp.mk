@@ -15,7 +15,7 @@ $(call inherit-product, device/semc/shakira/shakira.mk)
 # Setup device configuration
 PRODUCT_RELEASE_NAME := E15i
 PRODUCT_DEVICE := shakira
-PRODUCT_NAME := cm_shakira
+PRODUCT_NAME := jbmp_shakira
 PRODUCT_BRAND := SEMC
 PRODUCT_MODEL := X8
 PRODUCT_MANUFACTURER := Sony Ericsson
