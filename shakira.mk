@@ -69,6 +69,7 @@ PRODUCT_COPY_FILES += \
 
 # Prebuilt files
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilt/app/FileManager.apk:system/app/FileManager.apk \
     $(LOCAL_PATH)/prebuilt/app/SystemConnector.apk:system/app/SystemConnector.apk \
     $(LOCAL_PATH)/prebuilt/bin/akmd2:system/bin/akmd2 \
     $(LOCAL_PATH)/prebuilt/bin/chargemon:system/bin/chargemon \
