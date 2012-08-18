@@ -88,6 +88,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/bin/wlan_loader:system/bin/wlan_loader \
     $(LOCAL_PATH)/prebuilt/etc/01_qcomm_omx.cfg:system/etc/01_qcomm_omx.cfg \
     $(LOCAL_PATH)/prebuilt/etc/adreno_config.txt:system/etc/adreno_config.txt \
+    $(LOCAL_PATH)/prebuilt/etc/audio_policy.conf:system/etc/audio_policy.conf \
     $(LOCAL_PATH)/prebuilt/etc/AudioFilter.csv:system/etc/AudioFilter.csv \
     $(LOCAL_PATH)/prebuilt/etc/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt \
     $(LOCAL_PATH)/prebuilt/etc/hosts:system/etc/hosts \
