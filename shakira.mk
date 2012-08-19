@@ -48,7 +48,6 @@ PRODUCT_PACKAGES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    audio.usb.default \
     audio.a2dp.default \
     libaudioutils
 
