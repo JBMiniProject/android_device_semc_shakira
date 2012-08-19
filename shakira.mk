@@ -55,7 +55,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory \
     make_ext4fs \
-    setup_fs
+    setup_fs \
+    rild \
+    wlan_cu \
+    wlan_loader
 
 # Bugmailer
 PRODUCT_PACKAGES += \
@@ -97,14 +100,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/bin/nvimport:system/bin/nvimport \
     $(LOCAL_PATH)/prebuilt/bin/port-bridge:system/bin/port-bridge \
     $(LOCAL_PATH)/prebuilt/bin/qmuxd:system/bin/qmuxd \
-    $(LOCAL_PATH)/prebuilt/bin/rild:system/bin/rild \
     $(LOCAL_PATH)/prebuilt/bin/semc_chargalg:system/bin/semc_chargalg \
     $(LOCAL_PATH)/prebuilt/bin/tiap_cu:system/bin/tiap_cu \
     $(LOCAL_PATH)/prebuilt/bin/tiap_loader:system/bin/tiap_loader \
     $(LOCAL_PATH)/prebuilt/bin/tiap_loader.sh:system/bin/tiap_loader.sh \
     $(LOCAL_PATH)/prebuilt/bin/updatemiscta:system/bin/updatemiscta \
-    $(LOCAL_PATH)/prebuilt/bin/wlan_cu:system/bin/wlan_cu \
-    $(LOCAL_PATH)/prebuilt/bin/wlan_loader:system/bin/wlan_loader \
     $(LOCAL_PATH)/prebuilt/etc/01_qcomm_omx.cfg:system/etc/01_qcomm_omx.cfg \
     $(LOCAL_PATH)/prebuilt/etc/adreno_config.txt:system/etc/adreno_config.txt \
     $(LOCAL_PATH)/prebuilt/etc/audio_policy.conf:system/etc/audio_policy.conf \
