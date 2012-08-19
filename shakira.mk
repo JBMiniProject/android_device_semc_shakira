@@ -60,6 +60,15 @@ PRODUCT_PACKAGES += \
     wlan_cu \
     wlan_loader
 
+# OpenSSH
+PRODUCT_PACKAGES += \
+    scp \
+    sftp \
+    ssh \
+    sshd \
+    ssh-keygen \
+    start-ssh
+
 # Bugmailer
 PRODUCT_PACKAGES += \
     send_bug
