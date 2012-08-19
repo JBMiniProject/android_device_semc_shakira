@@ -35,6 +35,7 @@ PRODUCT_PACKAGES := \
 PRODUCT_PACKAGES += \
     libmm-omxcore \
     libOmxCore \
+    libdivxdrmdecrypt \
     libstagefrighthw
 
 # Camera
@@ -47,8 +48,15 @@ PRODUCT_PACKAGES += \
 
 # Audio
 PRODUCT_PACKAGES += \
+    audio.usb.default \
     audio.a2dp.default \
     libaudioutils
+
+# Misc
+    PRODUCT_PACKAGES += \
+    com.android.future.usb.accessory \
+    make_ext4fs \
+    setup_fs
 
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
