@@ -66,6 +66,7 @@ PRODUCT_PACKAGES += \
     sftp \
     ssh \
     sshd \
+    sshd-config \
     ssh-keygen \
     start-ssh
 
