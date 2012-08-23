@@ -139,6 +139,9 @@ BOARD_LDPI_RECOVERY := false
 
 # JIT
 WITH_JIT := true
+ENABLE_JSC_JIT:= true
+
+# Browser
 JS_ENGINE := v8
 
 # SD Mount
