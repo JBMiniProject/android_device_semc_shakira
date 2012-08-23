@@ -167,6 +167,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/lib/libaudioeq.so:system/lib/libaudioeq.so \
     $(LOCAL_PATH)/prebuilt/lib/libauth.so:system/lib/libauth.so \
     $(LOCAL_PATH)/prebuilt/lib/libC2D2.so:system/lib/libC2D2.so \
+    $(LOCAL_PATH)/prebuilt/lib/libcamera.so:system/lib/libcamera.so \
     $(LOCAL_PATH)/prebuilt/lib/libcm.so:system/lib/libcm.so \
     $(LOCAL_PATH)/prebuilt/lib/libdiag.so:system/lib/libdiag.so \
     $(LOCAL_PATH)/prebuilt/lib/libdll.so:system/lib/libdll.so \
@@ -182,6 +183,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/lib/libmmjpeg.so:system/lib/libmmjpeg.so \
     $(LOCAL_PATH)/prebuilt/lib/libnv.so:system/lib/libnv.so \
     $(LOCAL_PATH)/prebuilt/lib/liboem_rapi.so:system/lib/liboem_rapi.so \
+    $(LOCAL_PATH)/prebuilt/lib/liboemcamera.so:system/lib/liboemcamera.so \
     $(LOCAL_PATH)/prebuilt/lib/libOmxAacDec.so:system/lib/libOmxAacDec.so \
     $(LOCAL_PATH)/prebuilt/lib/libOmxAacEnc.so:system/lib/libOmxAacEnc.so \
     $(LOCAL_PATH)/prebuilt/lib/libOmxAmrDec.so:system/lib/libOmxAmrDec.so \
