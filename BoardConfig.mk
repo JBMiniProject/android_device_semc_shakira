@@ -143,6 +143,7 @@ ENABLE_JSC_JIT:= true
 
 # Browser
 JS_ENGINE := v8
+ENABLE_WEBGL := true
 
 # SD Mount
 BOARD_UMS_LUNFILE := "/sys/devices/platform/usb_mass_storage/lun0/file"
