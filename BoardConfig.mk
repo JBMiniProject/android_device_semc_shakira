@@ -33,9 +33,6 @@ COMMON_GLOBAL_CFLAGS += -DECLAIR_LIBCAMERA
 COMMON_GLOBAL_CFLAGS += -DQCOM_ICS_COMPAT
 COMMON_GLOBAL_CFLAGS += -DICS_CAMERA_BLOB 
 
-# inherit from the proprietary version
--include vendor/semc/shakira/BoardConfigVendor.mk
-
 # Inclide headers
 TARGET_SPECIFIC_HEADER_PATH := device/semc/shakira/include
 
