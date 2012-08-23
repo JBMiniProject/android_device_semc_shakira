@@ -40,7 +40,7 @@ TARGET_SPECIFIC_HEADER_PATH := device/semc/shakira/include
 TARGET_BOARD_PLATFORM := msm7x27
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
 TARGET_ARCH_VARIANT := armv6-vfp
-TARGET_CPU_ABI := armeabi-v6j
+TARGET_CPU_ABI := armeabi-v6l
 TARGET_CPU_ABI2 := armeabi
 ARCH_ARM_HAVE_VFP := true
 
