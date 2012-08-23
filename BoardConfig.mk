@@ -27,8 +27,11 @@
 # Camera
 USE_CAMERA_STUB := true
 BOARD_USES_ECLAIR_LIBCAMERA := true
-BOARD_USE_FROYO_LIBCAMERA := true
-BOARD_CAMERA_LIBRARIES := libcameraservice libcamera
+BUILD_CAMERAHAL := true
+COMMON_GLOBAL_CFLAGS += -DBINDER_COMPAT
+COMMON_GLOBAL_CFLAGS += -DECLAIR_LIBCAMERA
+COMMON_GLOBAL_CFLAGS += -DQCOM_ICS_COMPAT
+COMMON_GLOBAL_CFLAGS += -DICS_CAMERA_BLOB 
 
 # inherit from the proprietary version
 -include vendor/semc/shakira/BoardConfigVendor.mk
