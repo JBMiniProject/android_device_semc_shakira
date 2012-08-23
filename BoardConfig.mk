@@ -73,6 +73,7 @@ PRODUCT_DEFAULT_WIFI_CHANNELS := 14
 
 # EGL
 BOARD_EGL_CFG := device/semc/shakira/prebuilt/lib/egl/egl.cfg
+COMMON_GLOBAL_CFLAGS += -DEGL_TRACE
 
 # Libaudio
 TARGET_PROVIDES_LIBAUDIO := true
