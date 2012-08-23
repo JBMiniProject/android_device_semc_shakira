@@ -218,7 +218,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/usr/keylayout/7k_handset.kl:system/usr/keylayout/7k_handset.kl \
     $(LOCAL_PATH)/prebuilt/usr/keylayout/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl \
     $(LOCAL_PATH)/prebuilt/usr/keylayout/shakira_keypad.kl:system/usr/keylayout/shakira_keypad.kl \
-    $(LOCAL_PATH)/prebuilt/usr/keylayout/systemconnector.kl:system/usr/keylayout/systemconnector.kl
+    $(LOCAL_PATH)/prebuilt/usr/keylayout/systemconnector.kl:system/usr/keylayout/systemconnector.kl \
+    $(LOCAL_PATH)/prebuilt/xbin/zipalign:system/xbin/zipalign
 
 # Prebuilt Updater-script
 PRODUCT_COPY_FILES += \
