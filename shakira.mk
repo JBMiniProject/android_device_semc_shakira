@@ -50,6 +50,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/usr/idc/synaptics-rmi-touchscreen.idc:system/usr/idc/synaptics-rmi-touchscreen.idc \
     $(LOCAL_PATH)/prebuilt/usr/idc/cyttsp-spi.idc:system/usr/idc/cyttsp-spi.idc
 
-# Touchsceen
+# Updater script
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/update-binary:obj/EXECUTABLES/updater_intermediates/updater
