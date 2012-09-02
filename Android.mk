@@ -1,7 +1,10 @@
-LOCAL_PATH := $(my-dir)
+# inherit from the common version
+-include device/semc/msm7x27-common/Android.mk
+
+LOCAL_PATH := $(call my-dir)
+
+LOCAL_MODULE_TAGS := optional
 
 ifeq ($(TARGET_DEVICE),shakira)
-    subdir_makefiles := \
-        $(LOCAL_PATH)/libqcomui/Android.mk
-    include $(subdir_makefiles)
+    include $(all-subdir-makefiles)
 endif
