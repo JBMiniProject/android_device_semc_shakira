@@ -22,7 +22,7 @@ PRODUCT_DEVICE := shakira
 PRODUCT_MODEL := E15i
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/kernel
+TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilt/kernel
 endif
 
 DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlay
@@ -52,4 +52,4 @@ PRODUCT_COPY_FILES += \
 
 # Updater script
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/update-binary:obj/EXECUTABLES/updater_intermediates/updater
+    device/semc/msm7x27-common/prebuilt/update-binary:obj/EXECUTABLES/updater_intermediates/updater
