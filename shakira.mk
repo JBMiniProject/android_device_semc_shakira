@@ -43,7 +43,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/bin/semc_chargalg:system/bin/semc_chargalg \
     $(LOCAL_PATH)/prebuilt/bin/tiap_cu:system/bin/tiap_cu \
     $(LOCAL_PATH)/prebuilt/bin/tiap_loader:system/bin/tiap_loader \
-    $(LOCAL_PATH)/prebuilt/etc/apns-conf.xml:system/etc/apns-conf.xml \
     $(LOCAL_PATH)/prebuilt/etc/media_profiles.xml:/system/etc/media_profiles.xml \
     $(LOCAL_PATH)/prebuilt/etc/sensors.conf:system/etc/sensors.conf \
     $(LOCAL_PATH)/prebuilt/etc/semc/chargemon/anim1.rle:system/etc/semc/chargemon/anim1.rle \
