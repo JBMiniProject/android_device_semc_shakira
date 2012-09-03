@@ -35,7 +35,8 @@ PRODUCT_PROPERTY_OVERRIDES := \
 # Shakira uses medium-density artwork where available
 PRODUCT_AAPT_CONFIG := normal mdpi
 PRODUCT_AAPT_PREF_CONFIG := mdpi
-PRODUCT_LOCALES := mdpi
+PRODUCT_LOCALES += \
+                    mdpi
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/bin/akmd2:system/bin/akmd2 \
