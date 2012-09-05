@@ -227,9 +227,18 @@
     <!-- Enable lockscreen rotation -->
     <bool name="config_enableLockScreenRotation">true</bool>
 
+    <!-- Timeout in MS for how long you have to long-press the back key to
+    kill the foreground app. -->
+    <integer name="config_backKillTimeout">1500</integer>
+
+    <!-- enable screen saver feature -->
+    <bool name="config_enableDreams">true</bool>
+
     <bool name="config_sf_limitedAlpha">true</bool>
     <bool name="config_sf_slowBlur">false</bool>
     <bool name="config_multiColorBatteryLed">true</bool>
     <bool name="config_animateScreenLights">true</bool>
+
+    
 
 </resources>
