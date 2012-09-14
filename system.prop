@@ -89,3 +89,10 @@ dalvik.gc.type-precise
 # GPS
 ro.ril.def.agps.mode=2
 ro.ril.def.agps.feature=1
+
+# OTA Update Center
+otaupdater.otaid=jbmpx8
+otaupdater.otaver=beta2
+otaupdater.otatime=20120908-2045
+otaupdater.noflash=1
+otaudpater.rebootcmd=$$NULL$$
