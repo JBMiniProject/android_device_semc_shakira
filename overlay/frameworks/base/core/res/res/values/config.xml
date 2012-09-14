@@ -237,8 +237,6 @@
     <bool name="config_sf_limitedAlpha">true</bool>
     <bool name="config_sf_slowBlur">false</bool>
     <bool name="config_multiColorBatteryLed">true</bool>
-    <bool name="config_animateScreenLights">true</bool>
-
-    
+    <bool name="config_animateScreenLights">false</bool>
 
 </resources>
