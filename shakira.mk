@@ -59,7 +59,3 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/usr/keychars/shakira_keypad.kcm.bin:system/usr/keychars/shakira_keypad.kcm.bin \
     $(LOCAL_PATH)/prebuilt/usr/keychars/systemconnector.kcm.bin:system/usr/keychars/systemconnector.kcm.bin \
     $(LOCAL_PATH)/prebuilt/usr/keylayout/shakira_keypad.kl:system/usr/keylayout/shakira_keypad.kl
-
-# Updater script
-PRODUCT_COPY_FILES += \
-    device/semc/msm7x27-common/prebuilt/update-binary:obj/EXECUTABLES/updater_intermediates/updater
