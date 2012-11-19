@@ -62,12 +62,13 @@ video.accelerate.hw=1
 persist.sys.use_16bpp_alpha=1
 persist.sys.use_dithering=1
 hwui.disable_vsync=true
+debug.sf.no_hw_vsync=1
 hwui.print_config=choice
 debug.hwui.render_dirty_regions=false
 debug.enabletr=false
 com.qc.hardware=true
 windowsmgr.max_events_per_sec=150
-pm.sleep_mode=2
+pm.sleep_mode=1
 
 # LCD
 ro.sf.lcd_density=160
