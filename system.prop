@@ -68,7 +68,11 @@ debug.hwui.render_dirty_regions=false
 debug.enabletr=false
 com.qc.hardware=true
 windowsmgr.max_events_per_sec=150
-pm.sleep_mode=1
+pm.sleep_mode=2
+persist.sys.force_hw_ui=true
+ro.max.fling_velocity=4000
+debug.qctwa.statusbar=1
+debug.qctwa.preservebuf=1
 
 # LCD
 ro.sf.lcd_density=160
