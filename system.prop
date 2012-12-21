@@ -98,7 +98,7 @@ ro.ril.def.agps.feature=1
 
 # OTA Update Center
 otaupdater.otaid=jbmpx8
-otaupdater.otaver=release1
-otaupdater.otatime=20121216-1200
+otaupdater.otaver=release1a
+otaupdater.otatime=20121221-1200
 otaupdater.noflash=1
 otaudpater.rebootcmd=$$NULL$$
