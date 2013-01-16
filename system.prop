@@ -86,7 +86,9 @@ persist.android.strictmode=0
 
 # Dalvik
 dalvik.vm.dexopt-flags=m=y
-dalvik.vm.checkjni=false
+dalvik.vm.checkjni=0
+ro.kernel.android.checkjni=0
+dalvik.vm.verify_bytecode=false
 dalvik.vm.heapsize=32m
 dalvik.vm.execution-mode=int:jit
 dalvik.vm.dexopt-data-only=1
