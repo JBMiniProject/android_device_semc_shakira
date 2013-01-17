@@ -6,6 +6,7 @@ $(call inherit-product, vendor/jbmp/config/common_full_phone.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/semc/shakira/shakira.mk)
+$(call inherit-product, vendor/semc/shakira/shakira-vendor-blobs.mk)
 
 # Setup device configuration
 PRODUCT_RELEASE_NAME := X8
