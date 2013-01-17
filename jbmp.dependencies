@@ -1,0 +1,15 @@
+[
+    {
+        "repository": "android_kernel_semc_msm7x27",
+        "target_path": "kernel/semc/msm7x27",
+        "branch": "jellybean"
+    }, {
+        "repository": "android_device_semc_msm7x27-common",
+        "target_path": "device/semc/msm7x27-common",
+        "branch": "jellybean"
+    }, {
+        "repository": "android_vendor_semc",
+        "target_path": "vendor/semc",
+        "branch": "jellybean"
+    }
+]
