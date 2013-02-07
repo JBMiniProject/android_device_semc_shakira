@@ -1,0 +1,9 @@
+<resources>
+    <bool name="def_screen_brightness_automatic_mode">false</bool>
+    <bool name="def_accelerometer_rotation">true</bool>
+    <integer name="def_lockscreen_sounds_enabled">1</integer>
+    <bool name="def_sound_effects_enabled">true</bool>
+    <bool name="def_install_non_market_apps">true</bool>
+    <!-- 0 == default, 1 == never while plugged, 2 == never -->
+    <integer name="def_wifi_sleep_policy">0</integer>
+</resources>
