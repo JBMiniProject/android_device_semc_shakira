@@ -29,10 +29,6 @@ DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlay
 
 -include device/semc/msm7x27-common/msm7x27.mk
 
-# application settings that are stored in resourced.
-DEVICE_PACKAGE_OVERLAYS := device/semc/msm7x27-common/overlay_mdpi
-DEVICE_PACKAGE_OVERLAYS += device/semc/shakira/overlay
-
 # Shakira uses medium-density artwork where available
 PRODUCT_AAPT_CONFIG := normal mdpi
 PRODUCT_AAPT_PREF_CONFIG := mdpi
