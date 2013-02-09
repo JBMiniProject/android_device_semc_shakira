@@ -98,9 +98,13 @@ dalvik.gc.type-precise
 ro.ril.def.agps.mode=2
 ro.ril.def.agps.feature=1
 
+# Theme
+persist.sys.themeId=JB Mini Theme
+persist.sys.themePackageName=com.oxt.theme.jbmini
+
 # OTA Update Center
 otaupdater.otaid=jbmpx8
 otaupdater.otaver=release2
-otaupdater.otatime=20121221-1200
+otaupdater.otatime=20130209-1200
 otaupdater.noflash=1
 otaudpater.rebootcmd=$$NULL$$
