@@ -73,6 +73,7 @@ persist.sys.force_hw_ui=true
 ro.max.fling_velocity=4000
 debug.qctwa.statusbar=1
 debug.qctwa.preservebuf=1
+debug.mdpcomp.logs=0
 
 # LCD
 ro.sf.lcd_density=160
