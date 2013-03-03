@@ -22,10 +22,10 @@ ro.ril.enable.3g.prefix=1
 persist.ro.ril.sms_sync_sending=1
 
 # Wi-Fi
-wifi.interface=tiwlan0
+wifi.interface=wlan0
+wifi.softap.interface=wlan0
+wifi.softapconcurrent.interface=wlan0
 wifi.supplicant_scan_interval=180
-wifi.hotspot.ti=1
-wifi.ap.interface=tiap0
 
 # Media
 ro.media.dec.jpeg.memcap=10000000
